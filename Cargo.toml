@@ -1,0 +1,18 @@
+[package]
+name = "listpasswd"
+version = "1.0.0"
+edition = "2021"
+authors = ["Reokodoku"]
+description = "Distributed LAN chat application in the terminal"
+readme = "README.md"
+license = "Apache-2.0"
+homepage = "https://github.com/Reokodoku/listpasswd/"
+repository = "https://github.com/Reokodoku/listpasswd/"
+
+[dependencies]
+cli-table = { version = "0.4.7", default-features = false }
+
+[profile.release]
+lto = true
+strip = true
+codegen-units = 1
