@@ -1,6 +1,6 @@
-# listpasswd
+# listinfo
 
-A terminal program that parse the /etc/passwd file in a table.
+A terminal program that parse some Linux files in a table.
 
 ## How to build
 ```shell

@@ -1,13 +1,13 @@
 [package]
-name = "listpasswd"
-version = "1.0.0"
+name = "listinfo"
+version = "1.0.1"
 edition = "2021"
 authors = ["Reokodoku"]
-description = "Distributed LAN chat application in the terminal"
+description = "An app for list some Linux files"
 readme = "README.md"
 license = "Apache-2.0"
-homepage = "https://github.com/Reokodoku/listpasswd/"
-repository = "https://github.com/Reokodoku/listpasswd/"
+homepage = "https://github.com/Reokodoku/listinfo/"
+repository = "https://github.com/Reokodoku/listinfo/"
 
 [dependencies]
 cli-table = { version = "0.4.7", default-features = false }
