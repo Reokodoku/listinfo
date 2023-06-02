@@ -67,6 +67,4 @@ fn main() {
         "shells" => terminal::render_shells(overwritten_file_to_parse),
         _ => {}
     }
-    
-    //terminal::render(file_to_parse);
 }
