@@ -13,8 +13,8 @@ dependencies = [
 ]
 
 [[package]]
-name = "listpasswd"
-version = "1.0.0"
+name = "listinfo"
+version = "1.0.1"
 dependencies = [
  "cli-table",
 ]
