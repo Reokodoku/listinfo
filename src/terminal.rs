@@ -7,7 +7,7 @@ pub fn render_passwd(overwritten_file_to_parse: Option<String>) {
         parse_files::read_lines(overwritten_file_to_parse.unwrap_or("/etc/passwd".to_string()))
     {
         let mut lines_table: Vec<Vec<cli_table::CellStruct>> = vec![];
-        for line in lines.flatten() {
+        for line in lines.map_while(Result::ok) {
             let splitted_line: Vec<&str> = line.split(':').collect();
 
             lines_table.push(vec![
@@ -47,7 +47,7 @@ pub fn render_group(overwritten_file_to_parse: Option<String>) {
         parse_files::read_lines(overwritten_file_to_parse.unwrap_or("/etc/group".to_string()))
     {
         let mut lines_table: Vec<Vec<cli_table::CellStruct>> = vec![];
-        for line in lines.flatten() {
+        for line in lines.map_while(Result::ok) {
             let splitted_line: Vec<&str> = line.split(':').collect();
 
             lines_table.push(vec![
@@ -81,9 +81,9 @@ pub fn render_shells(overwritten_file_to_parse: Option<String>) {
         parse_files::read_lines(overwritten_file_to_parse.unwrap_or("/etc/shells".to_string()))
     {
         let mut lines_table: Vec<Vec<cli_table::CellStruct>> = vec![];
-        for line in lines.flatten() {
-            if !line.starts_with("#") {
-                let splitted_line: Vec<&str> = line.split("\n").collect();
+        for line in lines.map_while(Result::ok) {
+            if !line.starts_with('#') {
+                let splitted_line: Vec<&str> = line.split('\n').collect();
 
                 lines_table.push(vec![splitted_line[0].cell()]);
             }
