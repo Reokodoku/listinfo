@@ -82,7 +82,7 @@ pub fn render_shells(overwritten_file_to_parse: Option<String>) {
     {
         let mut lines_table: Vec<Vec<cli_table::CellStruct>> = vec![];
         for line in lines.map_while(Result::ok) {
-            if !line.starts_with('#') {
+            if !line.starts_with('#') && !line.is_empty() {
                 let splitted_line: Vec<&str> = line.split('\n').collect();
 
                 lines_table.push(vec![splitted_line[0].cell()]);
